@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "trade-me": {
+      "command": "npx",
+      "args": ["-y", "@placeholder/trade-me-mcp"],
+      "env": {
+        "TRADEME_CONSUMER_KEY": "{{TRADEME_CONSUMER_KEY}}",
+        "TRADEME_CONSUMER_SECRET": "{{TRADEME_CONSUMER_SECRET}}"
+      }
+    }
+  }
+}

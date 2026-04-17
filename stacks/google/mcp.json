@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "google-drive": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "{{GOOGLE_CLIENT_ID}}",
+        "GOOGLE_CLIENT_SECRET": "{{GOOGLE_CLIENT_SECRET}}"
+      }
+    },
+    "gmail": {
+      "command": "npx",
+      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "{{GOOGLE_CLIENT_ID}}",
+        "GOOGLE_CLIENT_SECRET": "{{GOOGLE_CLIENT_SECRET}}"
+      }
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": ["-y", "@cocal/google-calendar-mcp"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "{{GOOGLE_CLIENT_ID}}",
+        "GOOGLE_CLIENT_SECRET": "{{GOOGLE_CLIENT_SECRET}}"
+      }
+    },
+    "google-meet": {
+      "command": "npx",
+      "args": ["-y", "@placeholder/google-meet-mcp"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "{{GOOGLE_CLIENT_ID}}",
+        "GOOGLE_CLIENT_SECRET": "{{GOOGLE_CLIENT_SECRET}}"
+      }
+    }
+  }
+}

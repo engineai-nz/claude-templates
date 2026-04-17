@@ -1,0 +1,59 @@
+name: Build and release bundles
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version string for manual build"
+        required: false
+        default: "manual"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Determine version
+        id: version
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            echo "version=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build bundles
+        env:
+          BUNDLE_VERSION: ${{ steps.version.outputs.version }}
+        run: python3 scripts/build-bundles.py
+
+      - name: List artifacts
+        run: ls -la dist/bundles/
+
+      - name: Upload artifacts (workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundles-${{ steps.version.outputs.version }}
+          path: dist/bundles/
+
+      - name: Create GitHub release (tag push)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/bundles/*.tar.gz
+            dist/bundles/checksums.txt
+          generate_release_notes: true

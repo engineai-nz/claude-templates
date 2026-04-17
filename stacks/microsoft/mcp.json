@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "onedrive": {
+      "command": "npx",
+      "args": ["-y", "@placeholder/onedrive-mcp"],
+      "env": {
+        "AZURE_CLIENT_ID": "{{AZURE_CLIENT_ID}}",
+        "AZURE_CLIENT_SECRET": "{{AZURE_CLIENT_SECRET}}",
+        "AZURE_TENANT_ID": "{{AZURE_TENANT_ID}}"
+      }
+    },
+    "outlook-mail": {
+      "command": "npx",
+      "args": ["-y", "@placeholder/outlook-mail-mcp"],
+      "env": {
+        "AZURE_CLIENT_ID": "{{AZURE_CLIENT_ID}}",
+        "AZURE_CLIENT_SECRET": "{{AZURE_CLIENT_SECRET}}",
+        "AZURE_TENANT_ID": "{{AZURE_TENANT_ID}}"
+      }
+    },
+    "outlook-calendar": {
+      "command": "npx",
+      "args": ["-y", "@placeholder/outlook-calendar-mcp"],
+      "env": {
+        "AZURE_CLIENT_ID": "{{AZURE_CLIENT_ID}}",
+        "AZURE_CLIENT_SECRET": "{{AZURE_CLIENT_SECRET}}",
+        "AZURE_TENANT_ID": "{{AZURE_TENANT_ID}}"
+      }
+    },
+    "teams": {
+      "command": "npx",
+      "args": ["-y", "@placeholder/teams-mcp"],
+      "env": {
+        "AZURE_CLIENT_ID": "{{AZURE_CLIENT_ID}}",
+        "AZURE_CLIENT_SECRET": "{{AZURE_CLIENT_SECRET}}",
+        "AZURE_TENANT_ID": "{{AZURE_TENANT_ID}}"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "industry": "property",
+  "display_name": "Property & Real Estate",
+  "version": "0.1.0",
+  "description": "Stub bundle for property agents and brokers. Real content lands in content-buildout phase.",
+  "add_ons": ["slack", "hubspot", "notion"],
+  "skills": [
+    "property-starter"
+  ]
+}
