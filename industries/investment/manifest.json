@@ -1,0 +1,10 @@
+{
+  "industry": "investment",
+  "display_name": "Investment & Wealth Management",
+  "version": "0.1.0",
+  "description": "Stub bundle for fund managers and wealth advisers. Real content lands in content-buildout phase.",
+  "add_ons": ["notion", "slack", "xero"],
+  "skills": [
+    "investment-starter"
+  ]
+}

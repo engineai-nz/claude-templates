@@ -1,0 +1,10 @@
+{
+  "industry": "small-business",
+  "display_name": "Small Business",
+  "version": "0.1.0",
+  "description": "Stub bundle for general SMB owner-operators. Real content lands in content-buildout phase.",
+  "add_ons": ["xero", "hubspot", "slack", "notion"],
+  "skills": [
+    "small-business-starter"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "industry": "finance",
+  "display_name": "Finance & Accounting",
+  "version": "0.1.0",
+  "description": "Stub bundle for accountants, bookkeepers and financial advisers. Real content lands in content-buildout phase.",
+  "add_ons": ["xero", "hubspot", "slack", "notion"],
+  "skills": [
+    "finance-starter"
+  ]
+}

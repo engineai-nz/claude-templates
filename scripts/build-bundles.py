@@ -32,7 +32,9 @@ DIST_DIR = REPO_ROOT / "dist" / "bundles"
 
 STACKS = ["google", "microsoft"]
 # Industries to build. Scanned from industries/ but skip placeholders without manifest.json.
-DEFAULT_INDUSTRIES = ["property"]
+DEFAULT_INDUSTRIES = sorted(
+    p.parent.name for p in (REPO_ROOT / "industries").glob("*/manifest.json")
+)
 
 
 def load_json(path: Path) -> dict:
@@ -143,7 +145,7 @@ def main() -> int:
         "--industries",
         nargs="*",
         default=DEFAULT_INDUSTRIES,
-        help="Industries to build (default: property)",
+        help="Industries to build (default: every industry with a manifest.json)",
     )
     parser.add_argument(
         "--stacks", nargs="*", default=STACKS, help="Stacks to build (default: google microsoft)"

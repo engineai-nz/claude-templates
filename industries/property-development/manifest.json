@@ -1,0 +1,10 @@
+{
+  "industry": "property-development",
+  "display_name": "Property Development",
+  "version": "0.1.0",
+  "description": "Stub bundle for developers, project managers and quantity surveyors. Real content lands in content-buildout phase.",
+  "add_ons": ["xero", "slack", "notion"],
+  "skills": [
+    "property-development-starter"
+  ]
+}

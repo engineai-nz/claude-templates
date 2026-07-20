@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "fmp": {
+      "command": "npx",
+      "args": ["-y", "financial-modeling-prep-mcp-server"],
+      "env": {
+        "FMP_ACCESS_TOKEN": "{{FMP_ACCESS_TOKEN}}"
+      }
+    },
+    "alpha-vantage": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.alphavantage.co/mcp?apikey={{ALPHAVANTAGE_API_KEY}}"
+      ]
+    },
+    "exa": {
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server"],
+      "env": {
+        "EXA_API_KEY": "{{EXA_API_KEY}}"
+      }
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "{{FIRECRAWL_API_KEY}}"
+      }
+    }
+  }
+}

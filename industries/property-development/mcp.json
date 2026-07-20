@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "airtable": {
+      "command": "npx",
+      "args": ["-y", "airtable-mcp-server"],
+      "env": {
+        "AIRTABLE_API_KEY": "{{AIRTABLE_API_KEY}}"
+      }
+    },
+    "excel": {
+      "command": "npx",
+      "args": ["-y", "@negokaz/excel-mcp-server"]
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "{{FIRECRAWL_API_KEY}}"
+      }
+    },
+    "asana": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.asana.com/sse"]
+    }
+  }
+}
